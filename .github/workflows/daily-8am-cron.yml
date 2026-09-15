@@ -1,0 +1,27 @@
+name: Cron Job - Daily at 8 AM
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 8 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run a one-line script
+        run: echo "Daily 8 AM job started!"
+
+      - name: Run a multi-line script
+        run: |
+          echo "Current date and time:"
+          date
+          echo "Daily job completed successfully!"
