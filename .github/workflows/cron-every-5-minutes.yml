@@ -1,6 +1,5 @@
 name: Cron Job - Every 5 Minutes
 
-  workflow_dispatch:
 
   schedule:
     - cron: "*/5 * * * *"
